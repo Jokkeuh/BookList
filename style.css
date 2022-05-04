@@ -1,0 +1,99 @@
+*{
+    margin: 0px;
+
+}
+.container{
+    display: grid;
+    grid-template-columns: 2;
+    gap: 25px;
+    background:rgba(179, 233, 247, 0.250);
+}
+.book-one{
+
+    grid-column: 1/3;
+}
+.book-two{
+    grid-column: 2/3;
+    
+}
+
+
+.book-one,
+.book-two,
+.book-three,
+.book-four{
+    margin: auto;
+    background-color: rgb(251, 255, 188);
+}
+.background-container{
+    border: 3px solid black;
+    width: 100%;
+    height: 100vh;
+    
+}   
+.display-book-grid{
+    border: 5px solid black;
+    display: grid;
+    width: 75%;
+    height: 75%;
+    margin: auto;
+}
+.display-book-grid > div{
+    display: grid;
+
+    border: 1px solid black;
+    border-radius: 5%;
+}
+.display-book-grid > div > div{
+    
+    margin: auto;
+    
+    border: 1px solid black;
+    width: 250px;
+    height: 25px;
+
+}
+
+
+.popup-form{
+    position: absolute;
+    border: 1px solid black;
+    width: 285px;
+    top: 25%;
+    height: 225px;
+    right:50%;
+    margin:auto;
+    background-color:rgb(254, 255, 183);
+
+}
+
+.btnSubmit{
+    
+    position: absolute;
+    bottom: 10px;
+    padding: 15px;
+    right: 1px;
+}
+.input-container > div {
+    width: 150px;
+    margin: 15px;
+}
+
+
+.btnToggle{
+    position: absolute;
+    left: 1rem;
+    bottom: 25px;
+    margin-left: 60%;
+    width: 90px;
+    height: 90px;
+    background-color: aquamarine;
+    
+}
+
+/* red :rgb(100, 12, 12)
+   light-brown: rgb(100, 12, 12);
+   very-light-brown: rgb(100, 12, 12);
+   light-grey: rgba(199, 234, 243, 0.712);
+   blue-grey: rgba(179, 233, 247, 0.459);
+*/
