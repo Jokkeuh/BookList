@@ -25,16 +25,7 @@ const readBoxFour = document.getElementById("readBoxFour")
 
 
 
-
-
-
-
-
-    
-        
-
-
-
+// use function (e),, (e) => { e.target 
 class Book {
     constructor(title, author, pages, read) {
 
@@ -49,15 +40,34 @@ class Book {
     }
 }
 
+function createDiv(){
+    let div = document.createElement("new-book")
+    div.setAttribute("id","new-book")
+    div.setAttribute("class","new-book")
+    div.innerText = document.getElementById("book-info")
+    document.body.appendChild(div)
+    console.log(div)
+}
+
+function resetInput(){
+    const inputs = document.querySelectorAll("#inputTitle, #inputAuthor, #inputPages, #inputRead")
+    inputs.forEach(input => {
+        input.value = "";
+    })
+}
+
+
+
 
 const btnSubmit = document.getElementById("btnSubmit")
 btnSubmit.addEventListener("click", () => {
     addBookToLibrary()
     displayBooks()
     closeForm()
-    open = 0;
+    resetInput()
+    open = 0
 })
-let open = 0;
+let open = 0
 
 const btnToggle = document.getElementById("btnToggle")
 btnToggle.addEventListener("click", () => {
@@ -85,12 +95,13 @@ function closeForm(open){
 }
 
 
+
 function addBookToLibrary(){
     const title = document.getElementById("inputTitle").value
     const author = document.getElementById("inputAuthor").value
     const pages = document.getElementById("inputPages").value
     const read = document.getElementById("inputRead").checked
-    let newBook = new Book(title, author, pages, read);
+    let newBook = new Book(title, author, pages, read)
     console.log(myLibrary)
     myLibrary.push(newBook)
     return newBook
