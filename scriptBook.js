@@ -45,7 +45,9 @@ function createDiv(){
     div.setAttribute("id","new-book")
     div.setAttribute("class","new-book")
     div.innerText = document.getElementById("book-info")
-    document.body.appendChild(div)
+    let newDiv = document.getElementsByClassName("collection")[0]
+    console.log(newDiv)
+    newDiv.appendChild(div)
     console.log(div)
 }
 
