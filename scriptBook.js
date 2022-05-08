@@ -19,22 +19,21 @@ class Book {
 }
 
 
-function createDiv(){
+function createDivAndDisplay(){
 
-    
-   
+
     const titleDiv = document.createElement("div")
     const authorDiv = document.createElement("div")
     const pagesDiv = document.createElement("div")
-    
-
-
+    const btnExit = document.createElement("button")
     const books = document.createElement("div")
-    const containerDiv = document.getElementsByClassName("book-info")[0]
 
+    const containerDiv = document.getElementsByClassName("book-info")[0]
     const title = document.getElementById("inputTitle").value
     const author = document.getElementById("inputAuthor").value
     const pages= document.getElementById("inputPages").value
+        myLibrary.push(new Book(title, author, pages))
+    
 
         titleDiv.setAttribute("id","titleDiv")
         titleDiv.setAttribute("class","titleDiv")
@@ -48,14 +47,21 @@ function createDiv(){
         pagesDiv.setAttribute("class","pagesDiv")
         pagesDiv.innerText = "pages :" + pages
 
+        btnExit.setAttribute("id","buttonExit")
+        pagesDiv.setAttribute("class","buttonExit")
+
+
         books.setAttribute("id","new-book")
         books.setAttribute("class","new-book")
         books.setAttribute("name", "new-book")
+
         books.insertAdjacentElement("beforeend", titleDiv)
         books.insertAdjacentElement("beforeend", authorDiv)
         books.insertAdjacentElement("beforeend", pagesDiv)
+        books.insertAdjacentElement("beforeend", btnExit)
     
         containerDiv.insertAdjacentElement("beforeend", books)
+
         
 }
 
@@ -64,6 +70,13 @@ function resetInput(){
     inputs.forEach(input => {
         input.value = "";
     })
+}
+
+function removeDiv(){
+    
+    btn = document.getElementById('buttonExit')
+    this.parentNode.parentNode.removeChild(this.parentNode);
+    
 }
 
 
