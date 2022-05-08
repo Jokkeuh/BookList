@@ -14,7 +14,6 @@ class Book {
         this.info = function () {
             return `${title} by ${author} ${pages}, ${read}`;
         };
-
     }
 }
 
@@ -28,6 +27,7 @@ function createDivAndDisplay(){
     const btnExit = document.createElement("button")
     const books = document.createElement("div")
 
+    const readCheck = document.getElementById("inputRead").checked
     const containerDiv = document.getElementsByClassName("book-info")[0]
     const title = document.getElementById("inputTitle").value
     const author = document.getElementById("inputAuthor").value
@@ -59,11 +59,31 @@ function createDivAndDisplay(){
         books.insertAdjacentElement("beforeend", authorDiv)
         books.insertAdjacentElement("beforeend", pagesDiv)
         books.insertAdjacentElement("beforeend", btnExit)
-    
         containerDiv.insertAdjacentElement("beforeend", books)
 
+        closeOnClick()
+        
+        function closeOnClick() {
+            btnExit.addEventListener('click', function () {
+            this.parentNode.remove();
+             });
+
+            
+        if(readCheck != false){
+            console.log(readCheck)
+            return toggleRead()
+        }else{
+            return
+        }
+    } 
+    function toggleRead(){
+        books.classList.add("read")
+        console.log(this)
+        return console.log(readCheck != false)
+        }  
         
 }
+
 
 function resetInput(){
     const inputs = document.querySelectorAll("#inputTitle, #inputAuthor, #inputPages, #inputRead")
@@ -71,14 +91,6 @@ function resetInput(){
         input.value = "";
     })
 }
-
-function removeDiv(){
-    
-    btn = document.getElementById('buttonExit')
-    this.parentNode.parentNode.removeChild(this.parentNode);
-    
-}
-
 
 
 
