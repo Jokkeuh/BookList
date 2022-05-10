@@ -37,23 +37,25 @@ function createDivAndDisplay(){
 
         titleDiv.setAttribute("id","titleDiv")
         titleDiv.setAttribute("class","titleDiv")
-        titleDiv.innerText = "title :" + title
+        titleDiv.innerText = title
 
         authorDiv.setAttribute("id","authorDiv")
         authorDiv.setAttribute("class","authorDiv")
-        authorDiv.innerText = "author :" + author
+        authorDiv.innerText = author
         
         pagesDiv.setAttribute("id","pagesDiv")
         pagesDiv.setAttribute("class","pagesDiv")
-        pagesDiv.innerText = "pages :" + pages
+        pagesDiv.innerText = pages
 
         btnExit.setAttribute("id","buttonExit")
-        pagesDiv.setAttribute("class","buttonExit")
+        btnExit.setAttribute("class","buttonExit")
+        
 
-
+// create a read toggle with background-image: url(/images/logo/icons8-switch-off-40.png);
         books.setAttribute("id","new-book")
         books.setAttribute("class","new-book")
         books.setAttribute("name", "new-book")
+        books.classList.add("popout")
 
         books.insertAdjacentElement("beforeend", titleDiv)
         books.insertAdjacentElement("beforeend", authorDiv)
@@ -84,6 +86,8 @@ function createDivAndDisplay(){
         
 }
 
+//CheckForInput(){}
+
 
 function resetInput(){
     const inputs = document.querySelectorAll("#inputTitle, #inputAuthor, #inputPages, #inputRead")
@@ -93,9 +97,22 @@ function resetInput(){
 }
 
 
+function openForm(open) {
+    document.getElementById("myForm").style.display = "block";
+    return open = 1
+
+}
+
+function closeForm(open){
+    document.getElementById("myForm").style.display = "none";
+    return open = 0
+}
+
+
 
 const btnSubmit = document.getElementById("btnSubmit")
 btnSubmit.addEventListener("click", () => {
+    
     closeForm()
     resetInput()
     open = 0
@@ -116,15 +133,8 @@ btnToggle.addEventListener("click", () => {
 
 
 
-function openForm(open) {
-    document.getElementById("myForm").style.display = "block";
-    return open = 1
 
-}
 
-function closeForm(open){
-    document.getElementById("myForm").style.display = "none";
-    return open = 0
-}
+
 closeForm()
 

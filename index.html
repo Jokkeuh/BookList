@@ -12,7 +12,9 @@
     <div class="background-container">
         
         
+        
         <div class="display-book-grid">
+            <div class="top-banner"></div>
             <div class="book-info">
                 
             </div>
@@ -24,24 +26,24 @@
         <div class="popup-form" id ="myForm">
                 <div class="input-container">
                     <div class="title">title
-                        <input type="text" class="inputTitle" id="inputTitle">
+                        <input type="text" class="inputTitle" id="inputTitle" maxlength="50" pattern="[A-Za-z]">
                     </div>
                     <div class="author">author
-                        <input type="text" class="inputAuthor"id="inputAuthor">
+                        <input type="text" class="inputAuthor"id="inputAuthor" maxlength="50" pattern="[A-Za-z]">
                     </div>
                     <div class="pages">pages
-                        <input type="text" class ="inputPages"id="inputPages">
+                        <input type="number" class ="inputPages"id="inputPages" min="0">
                     </div>
-                    <div class="checkbox">
+                    <div class="checkbox">read
                         <input type="checkbox" class ="inputRead"id="inputRead">
                     </div>
-                    <button type="submit" class="btnSubmit" id="btnSubmit" name="btnSubmit" onclick="createDivAndDisplay()">Submit Book</button>
+                    <button type="submit" class="btnSubmit" id="btnSubmit" name="btnSubmit" onclick="createDivAndDisplay()"></button>
                 </div>
             </div>
         <div class="output-container">
             <div class="latest-title" id="latest-title" ></div>
             <div class="toggleForm" id="toggleForm">
-                <button type="button" class="btnToggle" id="btnToggle">+</button>
+                <button type="button" class="btnToggle" id="btnToggle"></button>
                 
             </div>
         
